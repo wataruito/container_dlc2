@@ -3,9 +3,6 @@ FROM wataruito/ubg_core:3.6
 RUN apt-get update
 RUN apt-get -y install ffmpeg
 
-RUN apt-get install -y wget bzip2 git vim cmake xserver-xorg-dev libgl1-mesa-dev unzip && \
-    apt-get install -y x11-apps
-
 # Install DeepLabCut
 RUN conda install -y tensorflow==1.8 tensorflow-gpu==1.8
 RUN pip install --upgrade --force-reinstall pip==9.0.3
