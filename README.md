@@ -9,9 +9,37 @@ GUIs will work through X11-forwarding.
 ## Getting Started
 ### Prerequisites
 
-Ubuntu18.04, NVIDIA driver 410.78, CUDA 10.0, Docker 18.09.3
+Ubuntu18.04 desktop, NVIDIA driver 410.78, CUDA 10.0 and Docker 18.09.3.
 
+### Run the Docker container
 
+```
+imageName = 'wataruito/dlc2:'
+prefixPort = '92'
+import getpass
+user = getpass.getuser()
+sshPort = prefixPort + '22:22'
+jupyterPort = prefixPort + '01:8888'
+userHome = '/home/'+ user + '/docker_homes/' + containerName
+jupyterStart = '/home/' + user + '/Dropbox/Jupyter'
+display = ':0'
+homeMount = '/home/' + user
+
+!rm -Rf {userHome}
+!docker run \
+    -e USER={user} \
+    -e USER_GROUPS=sudo \
+    -e USER_ID=1000 \
+    -e USER_ENCRYPTED_PASSWORD=aa5V9MSdgw5ec \
+    -e USER_HOME={userHome} \
+    -e JUPYTER_START={jupyterStart} \
+    -e DISPLAY={display}\
+    -p {sshPort} -p {jupyterPort} \
+    -v {homeMount}:{homeMount} \
+    -v {homeMount}/.Xauthority:{userHome}/.Xauthority:rw \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --rm -dit --name={containerName} {imageName}
+```
 
 
 
