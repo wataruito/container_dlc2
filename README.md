@@ -13,7 +13,7 @@ Ubuntu18.04 desktop, NVIDIA driver 410.78, CUDA 10.0 and Docker 18.09.3.
 
 ### Run the Docker container
 
-```
+```python
 imageName = 'wataruito/dlc2:'
 prefixPort = '92'
 import getpass
