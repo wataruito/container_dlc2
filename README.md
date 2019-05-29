@@ -12,7 +12,7 @@ GUIs will work through X11-forwarding.
 Ubuntu18.04 desktop, NVIDIA driver 410.78, CUDA 10.0, Docker 18.09.3 and Anaconda 2018.12.
 
 ### Run the Docker container
-The following command is evoked in jupyter notebook. The container will start jupyter at the port of 9201 and ssh at 9220. The jupyter run as the current user.
+The following command is evoked in jupyter notebook. The container will start jupyter at the port of 9201 and ssh at 9222. The jupyter run as the current user.
 
 ```python
 imageName = 'wataruito/dlc2:'
@@ -28,6 +28,8 @@ homeMount = '/home/' + user
 
 !rm -Rf {userHome}
 !docker run \
+    --runtime=nvidia \
+    -e NVIDIA_VISIBLE_DEVICES=0 \
     -e USER={user} \
     -e USER_GROUPS=sudo \
     -e USER_ID=1000 \
