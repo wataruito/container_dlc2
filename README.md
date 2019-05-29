@@ -9,9 +9,10 @@ GUIs will work through X11-forwarding.
 ## Getting Started
 ### Prerequisites
 
-Ubuntu18.04 desktop, NVIDIA driver 410.78, CUDA 10.0 and Docker 18.09.3.
+Ubuntu18.04 desktop, NVIDIA driver 410.78, CUDA 10.0, Docker 18.09.3 and Anaconda 2018.12.
 
 ### Run the Docker container
+The following command is evoked in jupyter notebook. The container will start jupyter at the port of 9201 and ssh at 9220. The jupyter run as the current user.
 
 ```python
 imageName = 'wataruito/dlc2:'
