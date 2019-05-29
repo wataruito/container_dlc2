@@ -1,6 +1,7 @@
 # container_dlc2
 
-One Paragraph of project description goes here
+Docker image for DeepLabCut
+
 
 ## Getting Started
 
