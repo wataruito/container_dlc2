@@ -1,6 +1,10 @@
 # container_dlc2
 
 Docker image for DeepLabCut
+https://hub.docker.com/r/wataruito/dlc2
+
+GPU version.
+GUIs will work through X11-forwarding.
 
 ## Getting Started
 ### Prerequisites
