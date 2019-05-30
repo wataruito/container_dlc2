@@ -1,7 +1,8 @@
 # container_dlc2
 
 Docker image for DeepLabCut<BR>
-Docker Hub: https://hub.docker.com/r/wataruito/dlc2
+Docker Hub: https://hub.docker.com/r/wataruito/dlc2<B>
+The image tag represents the version of DLC. (ex. wataruito/dlc2:2.0.6.2)
 
 GPU version.
 GUIs will work through X11-forwarding.
